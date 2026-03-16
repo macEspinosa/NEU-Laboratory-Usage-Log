@@ -1,0 +1,5 @@
+{
+  "name": "NEU Laboratory Usage Log",
+  "description": "A system for tracking laboratory room usage via QR code scanning for professors and an admin dashboard for usage statistics.",
+  "requestFramePermissions": ["camera"]
+}

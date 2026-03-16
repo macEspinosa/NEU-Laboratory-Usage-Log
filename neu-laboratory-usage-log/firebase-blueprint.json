@@ -1,0 +1,55 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "System user (Professor or Admin)",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "professor"] },
+        "isBlocked": { "type": "boolean" },
+        "universityId": { "type": "string" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "Log": {
+      "title": "Usage Log",
+      "description": "Record of a professor using a laboratory room",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "roomNumber": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "entryMethod": { "type": "string", "enum": ["qr", "email"] }
+      },
+      "required": ["userId", "roomNumber", "timestamp", "entryMethod"]
+    },
+    "Room": {
+      "title": "Laboratory Room",
+      "description": "A laboratory room in the institution",
+      "type": "object",
+      "properties": {
+        "roomNumber": { "type": "string" },
+        "buildingName": { "type": "string" }
+      },
+      "required": ["roomNumber"]
+    }
+  },
+  "firestore": {
+    "/users/{uid}": {
+      "schema": "User",
+      "description": "User profiles and permissions"
+    },
+    "/logs/{logId}": {
+      "schema": "Log",
+      "description": "Laboratory usage records"
+    },
+    "/rooms/{roomId}": {
+      "schema": "Room",
+      "description": "Available laboratory rooms"
+    }
+  }
+}
