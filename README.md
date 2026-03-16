@@ -11,7 +11,7 @@ It consists of two main interfaces:
 - **Administrative Dashboard**
 
 🔗 **Live Project:**  
-https://ais-pre-dpxippybkparxdhd6isyzu-578523291769.asia-southeast1.run.app/
+[NEU-LABORATORY-USAGE-LOG](https://ais-pre-dpxippybkparxdhd6isyzu-578523291769.asia-southeast1.run.app/)
 
 ---
 
